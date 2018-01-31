@@ -1,8 +1,9 @@
 class Background:
-    def __init__(self, description):
+    def __init__(self, background, description):
+        self.b = background
         self.d = description
-print ('what class would you like to learn more about? Soldier?')
-x= Background('you are a military trained badass')
+print('which background would you like to learn more about? Soldier?')
+x = Background("Soldier:","You are a millitary trained badass")
 z=input()
 if z == 'Soldier':
-    print(x.d)
+    print(x.b, x.d)
