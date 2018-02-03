@@ -11,6 +11,9 @@
 *.log
 *.pgn
 
+#python
+*.pyc
+
 #misc
 *.tar
 *.tar.gz
