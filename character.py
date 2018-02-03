@@ -12,30 +12,13 @@ class CharacterProps:
                  gender = 0,     # encoding 0 = 'male', 1 = 'female', 2 = 'android'/'other'
                  height = 1.2,   # meters
                  weight = 82,    # kg (important for low/high gravity environments)
-                 age = 24,       # years
-                 other=""):
+                 age = 24):      # years
         self.name = name
         self.gender = gender
         self.height = height
         self.weight = weight
         self.age = age
-        self.background = ""
-        self.other = other
 
-    def set_background(self, b):
-        """
-        Set/update a background story for the character
-        """
-        self.background = b
-
-    def get_background(self):
-        return self.background
-
-    def set_other(self, o):
-        """
-        Sets 'other' information about this character, if any
-        """
-        self.other = o
 
     def desc(self):
         gen = ['male', 'female', 'android']
@@ -44,12 +27,10 @@ class CharacterProps:
         print('Gender: %s' % gen[self.gender])
         print('Height(m): %d' % self.height)
         print('Weight(kg): %d' % self.weight)
-        print('--Background--')
-        print(background)
 
-        
+
 # ------------------ Base class Character --------------------------------
-class Character:    
+class Character:
     def __init__(self,
                  skills=[],
                  armor=[],
@@ -89,7 +70,7 @@ class Character:
             print(' %s' % a.print_status())
         print('---Weapons---')
         for w in Weapons:
-            print(' %s' % w.desc())            
+            print(' %s' % w.desc())
             print(' %s' % w.print_status(Ammo))
         print('---Keys---')
         for k in Keys:
@@ -99,10 +80,10 @@ class Character:
             print(' %s' % t.desc())
         print('---Properties---')
         for p in Props:
-            print(' %s' % p.desc())            
+            print(' %s' % p.desc())
 
-            
-            
+
+
 # ------------------ Derived Character implementation -----------------------------
 class Scientist(Character):
     pass
