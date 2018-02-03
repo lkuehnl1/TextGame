@@ -10,12 +10,12 @@ def run_game():
     game_done = False
     print("Type a command below..")
     while (not game_done):
-        resp = raw_input() 
+        resp = input()
         game_done = parse_response(resp)
     print("..exiting") 
-    exit() 
+    exit()
 
-    
+
 def parse_response(resp):
     """
     First stab at response parsing:
@@ -32,14 +32,14 @@ def parse_response(resp):
         "help" : help_menu,
     }
     func = cases.get(resp, lambda : False)
-    return func() 
+    return func()
 
 
-def help_menu():    
+def help_menu():
     print('..list of recognized commands')
     print('  help: prints this menu')
     print('  quit/Quit/Exit/exit: exits the game.')
-    print('  start: picks a character for you, and starts')    
+    print('  start: picks a character for you, and starts')
     return False
 
 
