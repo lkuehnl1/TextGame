@@ -13,7 +13,7 @@ class Skill:
         """
         Description of this specific skill (debugging/logging purposes)
         """
-        raise NotImplementedError("Subclass must implement abstract method")
+        return 'No skill..'
 
     def add(self, pts):
         """
@@ -31,7 +31,7 @@ class Skill:
         """
         Access the points placed in this skill.
         """
-        return pts
+        return self.pts
 
         
 # ------------------ Derived Skill classes implementation -----------------------------

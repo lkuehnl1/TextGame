@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import skill as S
+import weapon as W
+
 import sys
 
 class CharacterProps:
@@ -30,14 +33,11 @@ class CharacterProps:
 
 
 # ------------------ Base class Character --------------------------------
+
+# todo: add Equipment (armor, weapons, ammo), Items(medkit,stimpak,drugs,keys,tech,etc.)
 class Character:
     def __init__(self,
-                 skills=[],
-                 armor=[],
-                 weapons=[],
-                 ammo=[],
-                 keys=[],
-                 tech=[],
+                 bio="",
                  props=None):
         """
         Base class character:
@@ -48,22 +48,24 @@ class Character:
         tech:   things like nanite control/lasers/AI-related/hacking-related
         props:  CharacterProps class
         """
-        self.Skills = skills
-        self.Armor = armor
-        self.Weapons = weapons
-        self.Ammo = ammo
-        self.Keys = keys
-        self.Tech = tech
+        self.Skills = [S.Skill(0)] # for now, initialize skills to 0
+        self.Weapons = [W.Weapon()]
+        self.bio = bio
         self.Props = props
 
-    def desc():
+    def desc(self):
         """
         Description of this character (logging/debugging)
         prints: all contained descriptions of Skills/Inventory/Properties
         """
         print('---Skills---')
-        for s in Skills:
-            print(' %s - %d Levels' % s.desc(), s.Levels())
+        for s in self.Skills:
+            print(' %s - %d Levels' % (s.desc(), s.Levels()))
+        print('---Properties---')
+        print(' %s' % self.Props.desc())
+        print('---Bio---')
+        print(self.bio)
+""" TODO
         print('---Armor---')
         for a in Armor:
             print(' %s' % a.desc())
@@ -78,24 +80,36 @@ class Character:
         print('---Tech---')
         for t in Tech:
             print(' %s' % t.desc())
-        print('---Properties---')
-        for p in Props:
-            print(' %s' % p.desc())
-
+"""
 
 
 # ------------------ Derived Character implementation -----------------------------
 class Scientist(Character):
+    def __init__(self, bio="", props=None):
+        Character.__init__(self, bio, props)
+        self.bio = """ You are a Scientist! """
     pass
 
 class Marine(Character):
+    def __init__(self, bio="", props=None):
+        Character.__init__(self, bio, props)
+        self.bio = """ You are a marine! Get to the choppa!!"""
     pass
 
 class Medic(Character):
+    def __init__(self, bio="", props=None):
+        Character.__init__(self, bio, props)
+        self.bio = """ You are a Medic! """
     pass
 
 class Technician(Character):
+    def __init__(self, bio="", props=None):
+        Character.__init__(self, bio, props)
+        self.bio = """ You are a Technician! """
     pass
 
 class Android(Character):
+    def __init__(self, bio="", props=None):
+        Character.__init__(self, bio, props)
+        self.bio = """ You are a Android! """
     pass

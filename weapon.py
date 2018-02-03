@@ -10,26 +10,26 @@ class Weapon:
         """
         self.ammo = ammo
         
-    def desc():
+    def desc(self):
         """
         Description of this specific skill (debugging/logging purposes)
         """
         raise NotImplementedError("Subclass must implement abstract method")
 
-    def add(ammo):
+    def add(self, ammo):
         """
         Add weapon ammo
         """
         raise NotImplementedError("Subclass must implement abstract method")
 
 
-    def sub(ammo):
+    def sub(self, ammo):
         """
         Subtract ammo
         """
         raise NotImplementedError("Subclass must implement abstract method")
 
-    def Levels():
+    def Levels(self):
         """
         Access the level of this weapon (?)
         """
