@@ -19,5 +19,5 @@ class items:
     def desc(self):
         print ("Your items are %s" % self.contents)
 
-a = items(item("medkit"))
+a = items(item())
 print(a.desc())
