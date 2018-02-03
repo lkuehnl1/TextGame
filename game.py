@@ -34,13 +34,14 @@ def parse_response(resp):
     func = cases.get(resp, lambda : False)
     return func() 
 
-def help_menu():
-    
+
+def help_menu():    
     print('..list of recognized commands')
     print('  help: prints this menu')
     print('  quit/Quit/Exit/exit: exits the game.')
     print('  start: picks a character for you, and starts')    
     return False
+
 
 def start_character():
     """
@@ -48,16 +49,17 @@ def start_character():
     We can make it fancier later, for now, we default to Marine
     for the character selection
     """
-
     p = char.CharacterProps("Arnold",height=2,weight=120)
     M = char.Marine(props=p)
     M.desc() # test printout
     return False
 
+
 def exit_game():
     """ exits game
     """
     return True # our exit condition in the while loop (game_done = true) ok
+
 
 
 if __name__ == "__main__":

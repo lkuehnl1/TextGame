@@ -33,6 +33,7 @@ class Skill:
         """
         return self.pts
 
+    
         
 # ------------------ Derived Skill classes implementation -----------------------------
 class Agility(Skill):

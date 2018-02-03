@@ -22,7 +22,6 @@ class CharacterProps:
         self.weight = weight
         self.age = age
 
-
     def desc(self):
         gen = ['male', 'female', 'android']
         print('Name: %s' % self.name)
@@ -90,11 +89,13 @@ class Scientist(Character):
         self.bio = """ You are a Scientist! """
     pass
 
+
 class Marine(Character):
     def __init__(self, bio="", props=None):
         Character.__init__(self, bio, props)
         self.bio = """ You are a marine! Get to the choppa!!"""
     pass
+
 
 class Medic(Character):
     def __init__(self, bio="", props=None):
@@ -102,11 +103,13 @@ class Medic(Character):
         self.bio = """ You are a Medic! """
     pass
 
+
 class Technician(Character):
     def __init__(self, bio="", props=None):
         Character.__init__(self, bio, props)
         self.bio = """ You are a Technician! """
     pass
+
 
 class Android(Character):
     def __init__(self, bio="", props=None):
